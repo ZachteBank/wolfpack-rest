@@ -27,5 +27,6 @@ class WolfController extends BaseRestController
             'pack_id' => 'integer|min:0',
         ];
         parent::__construct(Wolf::class, $storeValidationRules);
+
     }
 }

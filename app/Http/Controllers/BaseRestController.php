@@ -5,18 +5,19 @@ namespace App\Http\Controllers;
 
 
 use Exception;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Response;
-use function Psy\debug;
 
 /** @template T */
 abstract class BaseRestController extends Controller implements IRestController
 {
-    private $entity;
 
-    private array $storeValidation;
+    /**
+     * @param class-string<T>
+     */
+    protected string $entity;
+
+    protected array $storeValidation;
 
     /**
      * BaseRestController constructor.
@@ -39,7 +40,6 @@ abstract class BaseRestController extends Controller implements IRestController
 
     /**
      * @param Request $request
-     * @param T $obj
      * @return JsonResponse
      * @throws Exception
      */

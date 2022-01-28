@@ -2,49 +2,30 @@
 
 namespace App\Http\Controllers;
 
+
+use Exception;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
+/** @template T */
 interface IRestController
 {
-//    /**
-//     * Display a listing of the resource.
-//     *
-//     * @return JsonResponse
-//     */
-//    public function index(): JsonResponse;
-//
-//    /**
-//     * Store a newly created resource in storage.
-//     *
-//     * @param \Illuminate\Http\Request $request
-//     * @return JsonResponse
-//     */
-//    public function store(Request $request): JsonResponse;
-//
-//    /**
-//     * Display the specified resource.
-//     *
-//     * @param int $id
-//     * @return JsonResponse
-//     */
-//    public function show($id): JsonResponse;
-//
-//    /**
-//     * Update the specified resource in storage.
-//     *
-//     * @param \Illuminate\Http\Request $request
-//     * @param int $id
-//     * @return JsonResponse
-//     */
-//    public function update(Request $request, $id): JsonResponse;
-//
-//    /**
-//     * Remove the specified resource from storage.
-//     *
-//     * @param int $id
-//     * @return JsonResponse
-//     */
-//    public function destroy($id): JsonResponse;
+    /**
+     * @return JsonResponse
+     */
+    public function index(): JsonResponse;
+
+    /**
+     * @param Request $request
+     * @param T $obj
+     * @return JsonResponse
+     * @throws Exception
+     */
+    public function store(Request $request): JsonResponse;
+
+    public function show($id): JsonResponse;
+
+    public function update(Request $request, $id): JsonResponse;
+
+    public function destroy($id): JsonResponse;
 }

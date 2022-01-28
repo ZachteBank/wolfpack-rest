@@ -18,6 +18,14 @@ class WolfController extends BaseRestController
      */
     public function __construct()
     {
-        parent::__construct(Wolf::class);
+        $storeValidationRules = [
+            'name' => 'required|unique:packs|max:255',
+            'gender' => 'required|in:male,female',
+            'birthday' => 'required|date',
+            'lat' => 'required|numeric',
+            'lng' => 'required|numeric',
+            'pack_id' => 'integer|min:0',
+        ];
+        parent::__construct(Wolf::class, $storeValidationRules);
     }
 }

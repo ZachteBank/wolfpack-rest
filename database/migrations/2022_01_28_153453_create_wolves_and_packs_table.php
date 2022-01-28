@@ -24,7 +24,8 @@ class CreateWolvesAndPacksTable extends Migration
             $table->string('name');
             $table->enum('gender', ["male", "female"]); // I would normally add a third option for gender, something like "other" or "Prefer not to Answer"
             $table->date('birthday');
-            $table->json('location');
+            $table->double('lat');
+            $table->double('lng');
             $table->foreignId('pack_id')->nullable()->constrained('packs')->nullOnDelete();
             $table->timestamps();
         });

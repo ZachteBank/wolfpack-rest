@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Wolf;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 /**
  * Class WolfController
@@ -24,7 +25,7 @@ class WolfController extends BaseRestController
             'birthday' => 'required|date',
             'lat' => 'required|numeric',
             'lng' => 'required|numeric',
-            'pack_id' => 'integer|min:0',
+            'pack_id' => 'integer|min:0|nullable|exists:App\Models\Pack,id',
         ];
         parent::__construct(Wolf::class, $storeValidationRules);
 

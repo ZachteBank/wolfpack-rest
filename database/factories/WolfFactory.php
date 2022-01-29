@@ -21,6 +21,7 @@ class WolfFactory extends Factory
             'birthday' => $this->faker->dateTimeThisCentury()->format("Y-m-d"),
             'lat' => $this->faker->latitude(51.23116, 52.35960),
             'lng' => $this->faker->longitude(4.40102, 6.68160),
+            'pack_id' => null,
         ];
     }
 }

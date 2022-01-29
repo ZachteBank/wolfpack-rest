@@ -31,6 +31,7 @@ class WolvesTest extends TestCase
             "lat" => $wolf->lat,
             "lng" => $wolf->lng,
             "gender" => $wolf->gender,
+            "pack_id" => $wolf->pack_id,
         ]);
     }
 
@@ -50,6 +51,40 @@ class WolvesTest extends TestCase
         );
     }
 
+    public function testAddWolfWrongNegativePackId()
+    {
+        $wolf = Wolf::factory()->make(["pack_id" => -3]);
+
+        $response = $this->json('POST', 'api/wolves', $wolf->toArray());
+        $response->assertStatus(422);
+        $response->assertJsonStructure(["message", "errors"]);
+        $response->assertJson([
+                "errors" => [
+                    "pack_id" => [
+                        "The pack id must be at least 0."
+                    ]
+                ]
+            ]
+        );
+    }
+
+    public function testAddWolfWrongNonExistingPackId()
+    {
+        $wolf = Wolf::factory()->make(['pack_id' => 11]);
+
+        $response = $this->json('POST', 'api/wolves', $wolf->toArray());
+        $response->assertStatus(422);
+        $response->assertJsonStructure(["message", "errors"]);
+        $response->assertJson([
+                "errors" => [
+                    "pack_id" => [
+                        "The selected pack id is invalid."
+                    ]
+                ]
+            ]
+        );
+    }
+
     public function testUpdateWolfCorrect()
     {
         $wolf = Wolf::findOrFail(1);
@@ -64,6 +99,7 @@ class WolvesTest extends TestCase
             "lat" => $wolf->lat,
             "lng" => $wolf->lng,
             "gender" => "male",
+            "pack_id" => $wolf->pack_id,
         ]);
 
         $wolf->gender = "female";
@@ -77,6 +113,7 @@ class WolvesTest extends TestCase
             "lat" => $wolf->lat,
             "lng" => $wolf->lng,
             "gender" => "female",
+            "pack_id" => $wolf->pack_id,
         ]);
     }
 

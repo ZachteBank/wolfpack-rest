@@ -24,5 +24,7 @@ use Illuminate\Support\Facades\Route;
 Route::resource('wolves', WolfController::class)->only([
     "index", "store", "show", "update", "destroy"
 ]);
-Route::resource('packs', PackController::class);
+Route::resource('packs', PackController::class)->only([
+    "index", "store", "show", "update", "destroy"
+]);
 Route::get('/packs/{id}/wolves', [PackController::class, 'getWolvesByPackId']);

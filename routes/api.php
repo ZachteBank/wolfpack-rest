@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
-Route::resource('wolfs', WolfController::class)->only([
+Route::resource('wolves', WolfController::class)->only([
     "index", "store", "show", "update", "destroy"
 ]);
 Route::resource('packs', PackController::class);

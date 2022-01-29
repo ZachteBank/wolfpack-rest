@@ -1167,3 +1167,9 @@ Stack trace:
 #40 /var/www/html/server.php(21): require_once('...')
 #41 {main}
 "} 
+[2022-01-29 13:51:42] testing.DEBUG: {"gender":"female","name":"Ms. Kendra Gibson","birthday":{"date":"2005-07-28 20:35:58.000000","timezone_type":3,"timezone":"UTC"},"lat":51.875703,"lng":5.362974,"updated_at":"2022-01-29T13:51:42.000000Z","created_at":"2022-01-29T13:51:42.000000Z","id":55}  
+[2022-01-29 13:52:10] testing.INFO: {"gender":"male","name":"Johnson Lang","birthday":{"date":"1941-07-13 16:00:13.000000","timezone_type":3,"timezone":"UTC"},"lat":51.361523,"lng":5.322853,"updated_at":"2022-01-29T13:52:10.000000Z","created_at":"2022-01-29T13:52:10.000000Z","id":50}  
+[2022-01-29 13:53:16] testing.INFO: {"gender":"male","name":"Jermain Hoeger","birthday":{"date":"2014-03-26 07:34:13.000000","timezone_type":3,"timezone":"UTC"},"lat":52.258752,"lng":5.910645,"updated_at":"2022-01-29T13:53:16.000000Z","created_at":"2022-01-29T13:53:16.000000Z","id":57}  
+[2022-01-29 13:54:08] testing.INFO: {"gender":"female","name":"Dr. Leonora Schmidt","birthday":{"date":"1941-03-12 01:30:12.000000","timezone_type":3,"timezone":"UTC"},"lat":52.071893,"lng":4.98537,"updated_at":"2022-01-29T13:54:08.000000Z","created_at":"2022-01-29T13:54:08.000000Z","id":60}  
+[2022-01-29 13:54:43] testing.INFO: {"gender":"male","name":"Khalil Little","birthday":{"date":"1929-05-26 04:15:59.000000","timezone_type":3,"timezone":"UTC"},"lat":51.899684,"lng":5.691788}  
+[2022-01-29 13:56:01] testing.INFO: {"gender":"male","name":"Jared Lynch","birthday":"1972-01-15","lat":51.708135,"lng":6.615805}  

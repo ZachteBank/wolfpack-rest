@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Date;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class WolfFactory extends Factory
@@ -17,7 +18,7 @@ class WolfFactory extends Factory
         return [
             'gender' => $gender,
             'name' => $this->faker->name($gender),
-            'birthday' => $this->faker->dateTimeThisCentury(),
+            'birthday' => $this->faker->dateTimeThisCentury()->format("Y-m-d"),
             'lat' => $this->faker->latitude(51.23116, 52.35960),
             'lng' => $this->faker->longitude(4.40102, 6.68160),
         ];
